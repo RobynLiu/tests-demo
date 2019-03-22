@@ -2,7 +2,6 @@ package com.example.testsdemo.controller;
 
 import com.example.testsdemo.TestsDemoApplication;
 import com.example.testsdemo.repo.UserRepo;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -11,7 +10,7 @@ import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Commit;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -27,7 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
         webEnvironment = SpringBootTest.WebEnvironment.MOCK,
         classes = TestsDemoApplication.class)
 @AutoConfigureMockMvc
-//@TestPropertySource(locations = "classpath:application-integrationtest.properties")
+@TestPropertySource(locations = "classpath:application-integrationtest.properties")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AppControllerIntegrationTest {
 
